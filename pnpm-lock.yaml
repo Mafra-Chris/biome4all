@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@types/leaflet': ^1.5.7
   '@vitejs/plugin-vue': ^2.3.1
-  '@vue-leaflet/vue-leaflet': ^0.6.1
   '@vueuse/core': ^8.3.0
   axios: ^0.27.2
   chart.js: ^3.9.1
@@ -34,7 +33,6 @@ dependencies:
 
 devDependencies:
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.5+vue@3.2.33
-  '@vue-leaflet/vue-leaflet': 0.6.1_o5p6bj4lvrzvre6i7g6ffo5lte
   typescript: 4.6.3
   unplugin-auto-import: 0.7.1_abjbpqxfh46lvflw7pqhsaqg4e
   unplugin-vue-components: 0.19.3_vite@2.9.5+vue@3.2.33
@@ -144,11 +142,13 @@ packages:
 
   /@types/geojson/7946.0.10:
     resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==}
+    dev: false
 
   /@types/leaflet/1.9.0:
     resolution: {integrity: sha512-7LeOSj7EloC5UcyOMo+1kc3S1UT3MjJxwqsMT1d2PTyvQz53w0Y0oSSk9nwZnOZubCmBvpSNGceucxiq+ZPEUw==}
     dependencies:
       '@types/geojson': 7946.0.10
+    dev: false
 
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
@@ -203,18 +203,6 @@ packages:
     dependencies:
       '@volar/typescript': 1.0.9
       '@volar/vue-language-core': 1.0.9
-    dev: true
-
-  /@vue-leaflet/vue-leaflet/0.6.1_o5p6bj4lvrzvre6i7g6ffo5lte:
-    resolution: {integrity: sha512-/sm0bdrdftXh5nSGEPsoKrJI1D/GtKiEsBo9X/TA2yu4lYTDcaem6U4t1Ea5CoLleiZRCNUrZr9PG/xHdUPXYA==}
-    peerDependencies:
-      '@types/leaflet': ^1.5.7
-      leaflet: ^1.6.0
-      vue: ^3.0.0
-    dependencies:
-      '@types/leaflet': 1.9.0
-      leaflet: 1.9.2
-      vue: 3.2.33
     dev: true
 
   /@vue/compiler-core/3.2.33:
@@ -1122,6 +1110,7 @@ packages:
 
   /leaflet/1.9.2:
     resolution: {integrity: sha512-Kc77HQvWO+y9y2oIs3dn5h5sy2kr3j41ewdqCMEUA4N89lgfUUfOBy7wnnHEstDpefiGFObq12FdopGRMx4J7g==}
+    dev: false
 
   /local-pkg/0.4.1:
     resolution: {integrity: sha512-lL87ytIGP2FU5PWwNDo0w3WhIo2gopIAxPg9RxDYF7m4rr5ahuZxP22xnJHIvaLTe4Z9P6uKKY2UHiwyB4pcrw==}
