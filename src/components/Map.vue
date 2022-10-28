@@ -16,6 +16,7 @@ const emit = defineEmits(['setActive']);
 function setActive(name: string) {
   areas.forEach((area) => {
     if (area.name === name) {
+      area.marker._icon.classList.remove('grey-hue');
       area.marker._icon.classList.add('green-hue');
     } else {
       area.marker._icon.classList.add('grey-hue');
@@ -46,39 +47,23 @@ onMounted(() => {
       });
     if (el.name === activeMap.value) {
       marker._icon.classList.add('green-hue');
-      return {
-        polygon: leaflet
-          .geoJSON(el.map, {
-            color: '#90A955',
-            fillColor: '#90A955',
-            fillOpacity: 0.5,
-          })
-          .addTo(mymap)
-          .on('click', () => {
-            setActive(el.name);
-          }),
-        marker: marker,
-        name: el.name,
-      };
     } else {
       marker._icon.classList.add('grey-hue');
-      return {
-        polygon: leaflet
-          .geoJSON(el.map, {
-            color: 'grey',
-            fillColor: 'grey',
-            fillOpacity: 0.5,
-          })
-          .addTo(mymap)
-          .on('click', () => {
-            activeMap = el.name;
-            setActive(el.name);
-            emit('setActive', el.name);
-          }),
-        marker: marker,
-        name: el.name,
-      };
     }
+    return {
+      polygon: leaflet
+        .geoJSON(el.map, {
+          color: 'grey',
+          fillColor: 'grey',
+          fillOpacity: 0.5,
+        })
+        .addTo(mymap)
+        .on('click', () => {
+          setActive(el.name);
+        }),
+      marker: marker,
+      name: el.name,
+    };
   });
   let coordinates =
     props.geoJson[0].map.features[0].geometry.coordinates[0][0][0];
