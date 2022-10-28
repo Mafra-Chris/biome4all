@@ -4,6 +4,10 @@ export default {
       colors: {
         biome: { 100: '#90a955' }
       },
+      screens: {
+        xs: '375px',
+
+      },
     },
 
   },
