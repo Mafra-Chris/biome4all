@@ -9,7 +9,7 @@ const SAMPLES_URLs = [
   'https://dev.b4adashboard.com/api/teste/teste3',
   'https://dev.b4adashboard.com/api/teste/teste4',
 ];
-
+const hasError = ref(false);
 async function getAllSamples(samplesURLs: string[]) {
   const promises = samplesURLs.map((url) => {
     return axios.get(url);
@@ -23,11 +23,8 @@ async function getAllSamples(samplesURLs: string[]) {
       });
     })
     .catch((error) => {
-      if (error.response.status === 404) {
-        console.log('Amostra não encontrada!');
-      } else {
-        console.log('Erro ao buscar amostras!');
-      }
+      hasError.value = true;
+      loading.value = false;
     });
 
   if (responses.length > 0) {
@@ -100,7 +97,7 @@ onMounted(async () => {
     <Header class="flex-grow-0 flex-shrink basis-auto mb-6"></Header>
     <div
       class="grid grid-cols-1 md:grid-cols-2 h-full flex-grow-1 flex-shrink basis-auto"
-      v-if="!loading"
+      v-if="!loading && !hasError"
     >
       <div class="px-4 pb-4 lg:px-8 lg:pb-8">
         <Map
@@ -115,6 +112,7 @@ onMounted(async () => {
         class="pb-8 pl-4 pr-4 md:pl-0 lg:pr-8"
       ></DataContainer>
     </div>
+    <div v-else-if="hasError"><ErrorRobot></ErrorRobot></div>
     <div
       v-else
       class="h-screen w-screen text-center flex justify-center items-center"

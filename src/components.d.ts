@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     DataContainer: typeof import('./components/DataContainer.vue')['default']
     DoughnutChart: typeof import('./components/DoughnutChart.vue')['default']
+    ErrorRobot: typeof import('./components/ErrorRobot.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     LevelChart: typeof import('./components/LevelChart.vue')['default']
     Map: typeof import('./components/Map.vue')['default']
