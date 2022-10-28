@@ -10,6 +10,14 @@
     <div class="px-6 md:px-14">
       <hr class="border-b-1" />
     </div>
+    <div class="px-4 lg:px-8 mt-6 mb-2">
+      <h1 class="font-bold text-lg text-biome-200">
+        Relatório da Análise Microbiana
+      </h1>
+      <h2 class="text-gray-400 text-sm">
+        Clique nos pinos para alternar entre as amostras.
+      </h2>
+    </div>
   </header>
 </template>
 

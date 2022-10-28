@@ -94,7 +94,7 @@ onMounted(async () => {
 
 <template>
   <div class="h-full flex flex-col z-0">
-    <Header class="flex-grow-0 flex-shrink basis-auto mb-6"></Header>
+    <Header class="flex-grow-0 flex-shrink basis-auto"></Header>
     <div
       class="grid grid-cols-1 md:grid-cols-2 h-full flex-grow-1 flex-shrink basis-auto"
       v-if="!loading && !hasError"
@@ -104,7 +104,7 @@ onMounted(async () => {
           :geoJson="allGeoJson"
           :activeName="activeSample.name"
           @setActive="setActiveSample"
-          class="rounded-lg border-gray-400 border"
+          class="rounded-lg border shadow-lg shadow-gray-300"
         ></Map>
       </div>
       <DataContainer
